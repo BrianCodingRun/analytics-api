@@ -1,0 +1,26 @@
+{
+  "name": "analytics-api",
+  "version": "1.0.0",
+  "description": "Website Monitoring API",
+  "keywords": [
+    "Analytics",
+    "Api",
+    "Node.js",
+    "Express"
+  ],
+  "homepage": "https://github.com/BrianCodingRun/analytics-api#readme",
+  "bugs": {
+    "url": "https://github.com/BrianCodingRun/analytics-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianCodingRun/analytics-api.git"
+  },
+  "license": "ISC",
+  "author": "Brian Coupama",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

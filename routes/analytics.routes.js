@@ -1,11 +1,11 @@
-import { Router } from "express";
-import {
+const { Router } = require("express");
+const {
   addAnalytics,
   deleteAnalytics,
   getAllAnalytics,
   getAnalyticsByIP,
   getAnalyticsByPath,
-} from "../controllers/analytics";
+} = require("../controllers/analytics.js");
 
 const router = Router();
 
@@ -15,4 +15,4 @@ router.get("/:ip", getAnalyticsByIP);
 router.post("/add", addAnalytics);
 router.delete("/:id", deleteAnalytics);
 
-export default router;
+module.exports = { analytics: router };

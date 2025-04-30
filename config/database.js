@@ -1,6 +1,6 @@
 // IMPORTS
-import dotenv from "dotenv";
-import mongoose from "mongoose";
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 
 // Init dotenv.config for environment variable
 dotenv.config();
@@ -13,7 +13,7 @@ if (!MONGODB_URI) {
 
 let isConnected = false;
 
-export const connectToDatabase = async () => {
+const connectToDatabase = async () => {
   if (isConnected) {
     return;
   }
@@ -25,4 +25,8 @@ export const connectToDatabase = async () => {
     console.error("❌ Failed to connect to MongoDB", error);
     throw error;
   }
+};
+
+module.exports = {
+  connectToDatabase,
 };

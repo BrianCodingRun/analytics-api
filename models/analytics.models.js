@@ -2,7 +2,7 @@ const { Schema, model, models } = require("mongoose");
 
 const AnalyticsSchema = new Schema({
   timestamp: { type: Date, required: true },
-  path: { type: String, required: true },
+  pathname: { type: String, required: true },
   duration: { type: Number, required: true },
   ip: { type: String, required: true },
   location: {
@@ -14,4 +14,5 @@ const AnalyticsSchema = new Schema({
   os: { type: String, required: true },
 });
 
-module.exports = models.Analytics || model("Analytics", AnalyticsSchema);
+const Analytics = models.Analytics || model("Analytics", AnalyticsSchema);
+module.exports = { Analytics };

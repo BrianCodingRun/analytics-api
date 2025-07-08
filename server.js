@@ -19,8 +19,10 @@ let corsOptions = {
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
+app.use(cors(corsOptions));
+
 // Routes
-app.use("/analytics", cors(corsOptions), analytics);
+app.use("/analytics", analytics);
 
 // Define port server
 const port = process.env.PORT || 5001;

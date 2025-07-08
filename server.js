@@ -13,11 +13,14 @@ const app = express();
 // Authorize json data
 app.use(express.json());
 
-// Authorize cors
-app.use(cors());
+// Cors config
+let corsOptions = {
+  origin: process.env.ORIGIN_CORS_AUTHORIZE,
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 
 // Routes
-app.use("/analytics", analytics);
+app.use("/analytics", cors(corsOptions), analytics);
 
 // Define port server
 const port = process.env.PORT || 5001;
